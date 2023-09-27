@@ -1,46 +1,50 @@
 local Translations = {
     notify = {
-        ydhk = "Não tens as chaves deste veículo.",
-        nonear = "Ninguém está perto de ti para entregares as chaves",
-        vlock = "Veículo trancado!",
-        vunlock = "Veículo destrancado!",
-        vlockpick = "Conseguiste abrir a fechadura da porta!",
-        fvlockpick = "Não conseguiste encontrar as chaves e ficas-te frustrado.",
-        vgkeys = "Entregas-te as chaves.",
-        vgetkeys = "Recebeste as chaves do veículo!",
-        fpid = 'Preenche o comando com o ID do jogador e a matrícula',
-        cjackfail = 'Carjacking falhado!',
+        ydhk = 'Não tem as chaves deste veículo.',
+        nonear = 'Não há ninguém por perto para entregar as chaves',
+        vlock = 'Veículo trancado!',
+        vunlock = 'Veículo destrancado!',
+        vlockpick = 'Conseguiu abrir a fechadura da porta!',
+        fvlockpick = 'Não conseguiu encontrar as chaves e agora sente-se frustrado.',
+        vgkeys = 'Entregou as chaves',
+        vgetkeys = 'Recebeu as chaves do veículo!',
+        fpid = 'Preencha o ID do jogador e a matricula',
+        cjackfail = 'Falha no roubo do veículo!',
+        vehclose = 'Nenhum veículo por perto!',
     },
     progress = {
-        takekeys = 'A tirar as chaves do corpo...',
-        hskeys = 'A procurar pelas chaves do veículo...',
-        acjack = 'A tentar fazer Carjacking...',
+        takekeys = 'Tirando as chaves do corpo...',
+        hskeys = 'Procurando as chaves do veículo...',
+        acjack = 'Tentativa de roubo de veículo...',
     },
     info = {
-        skeys = '~g~[H]~w~ - Procurar pelas Chaves',
-        tlock = "Alterar fechaduras do Veículo",
-        palert = "Roubo de veículo em progresso. Tipo: ",
-        engine = 'Ligar Motor',
+        skeys = '~g~[H]~w~ - Procurar as chaves',
+        tlock = 'Trancar/Destrancar Veículo',
+        palert = 'Roubo de veículo em andamento. Tipo: ',
+        engine = 'Ligar/Desligar Motor',
     },
     addcom = {
-        givekeys = "Entrega as chaves a alguém. Sem o ID, entrega à pessoa mais próxima ou a todos dentro do veículo.",
+        givekeys = 'Entregue as chaves a alguém. Se não houver identificação, entregue à pessoa mais próxima ou a todos no veículo.',
         givekeys_id = 'id',
-        givekeys_id_help = 'ID do Jogador',
-        addkeys = "Adiciona chaves a um veículo para alguém.",
+        givekeys_id_help = 'ID do jogador',
+        addkeys = 'Adicionar chaves a um veículo para alguém',
         addkeys_id = 'id',
-        addkeys_id_help = 'ID do Jogador',
-        addkeys_plate = "matrícula",
-        addkeys_plate_help = "Matrícula",
-        rkeys = "Retira as chaves de um veículo para alguém.",
+        addkeys_id_help = 'ID do jogador',
+        addkeys_plate = 'Matricula',
+        addkeys_plate_help = 'Matricula',
+        rkeys = 'Remover as chaves de um veículo para alguém.',
         rkeys_id = 'id',
-        rkeys_id_help = 'ID do Jogador',
-        rkeys_plate = 'matrícula',
-        rkeys_plate_help = 'Matrícula',
+        rkeys_id_help = 'ID do jogador',
+        rkeys_plate = 'Matricula',
+        rkeys_plate_help = 'Matricula',
     }
 
 }
 
-Lang = Lang or Locale:new({
-    phrases = Translations,
-    warnOnMissing = true
-})
+if GetConvar('qb_locale', 'en') == 'pt' then
+    Lang = Locale:new({
+        phrases = Translations,
+        warnOnMissing = true,
+        fallbackLang = Lang,
+    })
+end
