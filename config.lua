@@ -46,24 +46,60 @@ Config.SharedKeys = { -- Share keys amongst employees. Employees can lock/unlock
         vehicles = {
 	    'police', -- Vehicle model
 	    'police2', -- Vehicle model
-	}
+        'fiat_psp',
+        'psp_530d',
+        'bmwgs_psp',
+        'policesu',
+        'explorer_psp',
+        'riot psp',
+        'chevrolet_psp',
+        'cla_psp',
+        'e63_psp',
+        'limo_psp',
+        'ci_psp',
+        'dodge_psp',
+        'x6_psp',
+        'explorer2_psp',
+        'focus_psp',
+        'psp_ar8',
+        'gtr_psp',
+        'leon_psp',
+	   }
     },
-
+    ['ambulance'] = { -- Job name
+        requireOnduty = false,
+        vehicles = {
+        'ambulance_inem',
+        'evo_inem',
+        'amarok_inem',
+        'ambulancei',
+        'fordinem',
+        'bmwgs_inem',
+        'audi_inem',
+        'focus_inem',
+        'ngt19',
+        --'npwheelchair',
+       }
+    },
     ['mechanic'] = {
         requireOnduty = false,
         vehicles = {
             'towtruck',
-	}
+	   }
     }
 }
 
 -- These vehicles cannot be jacked
 Config.ImmuneVehicles = {
-    'stockade'
+    'stockade',
+    'frogger',
+    'frogger2',
 }
 
 -- These vehicles will never lock
-Config.NoLockVehicles = {}
+Config.NoLockVehicles = {
+    'npwheelchair',
+}
 
 -- These weapons cannot be used for carjacking
 Config.NoCarjackWeapons = {
